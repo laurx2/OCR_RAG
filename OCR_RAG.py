@@ -88,7 +88,7 @@ client = vision.ImageAnnotatorClient(credentials=creds)
 
 # Pinecone Initialization
 os.environ['PINECONE_ENVIRONMENT'] = 'gcp-starter'
-os.environ['PINECONE_API_KEY'] = '0389c178-d738-418b-a642-16cb05f2ce0a'
+os.environ['PINECONE_API_KEY'] = 'PINECONE_API_KEY'
 api_key = os.getenv("PINECONE_API_KEY") or "PINECONE_API_KEY"
 env = os.getenv("PINECONE_ENVIRONMENT") or "PINECONE_ENVIRONMENT"
 pinecone.init(api_key=api_key, environment=env)
@@ -96,7 +96,7 @@ index_name = 'houseofthesky'
 index = pinecone.GRPCIndex(index_name)
 
 if openai.api_key is None:
-    openai.api_key = "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"
+    openai.api_key = "OpenAI_api_key"
 
 def ocr_with_vision_api(image_file) -> str:
     """Use Google Cloud Vision API to extract text from an image."""
